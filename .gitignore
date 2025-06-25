@@ -1,0 +1,24 @@
+# Archivos generados por Nix
+flake.lock
+result/
+.nix-profile/
+.nix-defexpr/
+.nix-path
+
+# Archivos específicos de macOS
+.DS_Store
+
+# Archivos de historial de shell (si los tienes en .dotfiles)
+.zsh_history
+.bash_history
+
+# Archivos de Vim/Neovim
+.viminfo
+*.swp
+*.swo
+*.bak
+
+# Otros archivos sensibles o temporales que no quieras subir
+# Por ejemplo, si tienes claves SSH o tokens API aquí
+# .ssh/
+# .config/my-app/api_keys.txt
