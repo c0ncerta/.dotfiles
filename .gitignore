@@ -1,5 +1,4 @@
-# Archivos generados por Nix
-flake.lock
+# Archivos generados por Nix (excepto flake.lock - debe estar commiteado)
 result/
 .nix-profile/
 .nix-defexpr/
