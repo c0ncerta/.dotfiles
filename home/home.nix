@@ -7,7 +7,6 @@
   imports = [
     ./../modules/neovim.nix
     ./../modules/starship.nix
-    ./../modules/yabai.nix
   ];
 
   programs.home-manager.enable = true;
