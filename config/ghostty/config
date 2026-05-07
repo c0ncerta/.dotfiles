@@ -1,0 +1,30 @@
+# Ghostty Configuration
+# https://ghostty.org/docs/config/reference
+
+# ── Theme ───────────────────────────────────────────────────────
+theme = "Catppuccin Mocha"
+
+# ── Font ────────────────────────────────────────────────────────
+font-family = "JetBrainsMono Nerd Font"
+font-size = 14
+
+# ── Window ──────────────────────────────────────────────────────
+window-decoration = false
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
+
+# ── Appearance ──────────────────────────────────────────────────
+cursor-style = block
+cursor-style-blink = false
+copy-on-select = true
+
+# ── Background ──────────────────────────────────────────────────
+background-opacity = 0.95
+background-blur-radius = 10
+
+# ── Scrollback ──────────────────────────────────────────────────
+scrollback-limit = 50000
+
+# ── Terminal ────────────────────────────────────────────────────
+term = xterm-ghostty
