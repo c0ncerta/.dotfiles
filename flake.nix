@@ -46,17 +46,14 @@
         pkgs.mitmproxy
         pkgs.bun
 
-        # Languages & Version Managers
+        # Languages & Runtimes
         pkgs.python312
         pkgs.php
         pkgs.phpPackages.composer
         pkgs.pyenv
         pkgs.pipx
         pkgs.nodejs
-
-        # Node.js alternatives: pkgs.nodejs_18, nodejs_20, nodejs_22
-        # nvm is not in nixpkgs — use Nix to switch Node versions instead:
-        #   nix shell nixpkgs#nodejs_20
+        pkgs.bun
 
         # Media Tools
         pkgs.yt-dlp
@@ -137,6 +134,28 @@
       system.configurationRevision = self.rev or self.dirtyRev or null;
       system.stateVersion = 6;
       system.primaryUser = "mzzo";
+
+      # ── Yabai & skhd (window manager + hotkeys) ──
+      services.yabai = {
+        enable = true;
+        config = {
+          layout = "bsp";
+          window_gap = 8;
+          top_padding = 5;
+          bottom_padding = 5;
+          left_padding = 5;
+          right_padding = 5;
+        };
+      };
+      services.skhd = {
+        enable = true;
+        skhdConfig = ''
+          alt - h : yabai -m window --focus west
+          alt - l : yabai -m window --focus east
+          alt - j : yabai -m window --focus south
+          alt - k : yabai -m window --focus north
+        '';
+      };
 
       # ── Platform ──────────────────────────────────────────────
       nixpkgs.hostPlatform = "aarch64-darwin";
