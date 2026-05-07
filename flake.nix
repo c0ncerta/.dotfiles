@@ -21,10 +21,6 @@
         pkgs.neovim
         pkgs.tmux
 
-        # Window Manager
-        # pkgs.yabai  # disabled - backup only
-        pkgs.skhd
-
         # Media
         pkgs.mpv
         pkgs.ffmpeg
@@ -134,30 +130,7 @@
       system.stateVersion = 6;
       system.primaryUser = "mzzo";
 
-      # ── Yabai & skhd (window manager + hotkeys) ──
-      # yabai disabled - backup only
-      # services.yabai = {
-      #   enable = true;
-      #   config = {
-      #     layout = "bsp";
-      #     window_gap = 8;
-      #     top_padding = 5;
-      #     bottom_padding = 5;
-      #     left_padding = 5;
-      #     right_padding = 5;
-      #   };
-      # };
-      # skhd disabled - backup only
-      # services.skhd = {
-      #   enable = true;
-      #   skhdConfig = ''
-      #     alt - h : yabai -m window --focus west
-      #     alt - l : yabai -m window --focus east
-      #     alt - j : yabai -m window --focus south
-      #     alt - k : yabai -m window --focus north
-      #   '';
-      # };
-
+      
       # ── Platform ──────────────────────────────────────────────
       nixpkgs.hostPlatform = "aarch64-darwin";
     };
