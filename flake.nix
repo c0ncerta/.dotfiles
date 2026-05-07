@@ -147,15 +147,16 @@
       #     right_padding = 5;
       #   };
       # };
-      services.skhd = {
-        enable = true;
-        skhdConfig = ''
-          alt - h : yabai -m window --focus west
-          alt - l : yabai -m window --focus east
-          alt - j : yabai -m window --focus south
-          alt - k : yabai -m window --focus north
-        '';
-      };
+      # skhd disabled - backup only
+      # services.skhd = {
+      #   enable = true;
+      #   skhdConfig = ''
+      #     alt - h : yabai -m window --focus west
+      #     alt - l : yabai -m window --focus east
+      #     alt - j : yabai -m window --focus south
+      #     alt - k : yabai -m window --focus north
+      #   '';
+      # };
 
       # ── Platform ──────────────────────────────────────────────
       nixpkgs.hostPlatform = "aarch64-darwin";
