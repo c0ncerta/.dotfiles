@@ -22,7 +22,7 @@
         pkgs.tmux
 
         # Window Manager
-        pkgs.yabai
+        # pkgs.yabai  # disabled - backup only
         pkgs.skhd
 
         # Media
@@ -135,17 +135,18 @@
       system.primaryUser = "mzzo";
 
       # ── Yabai & skhd (window manager + hotkeys) ──
-      services.yabai = {
-        enable = true;
-        config = {
-          layout = "bsp";
-          window_gap = 8;
-          top_padding = 5;
-          bottom_padding = 5;
-          left_padding = 5;
-          right_padding = 5;
-        };
-      };
+      # yabai disabled - backup only
+      # services.yabai = {
+      #   enable = true;
+      #   config = {
+      #     layout = "bsp";
+      #     window_gap = 8;
+      #     top_padding = 5;
+      #     bottom_padding = 5;
+      #     left_padding = 5;
+      #     right_padding = 5;
+      #   };
+      # };
       services.skhd = {
         enable = true;
         skhdConfig = ''
