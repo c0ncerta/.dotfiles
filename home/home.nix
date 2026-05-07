@@ -152,6 +152,18 @@ print(f'  Installed {ext_id} v{ver}')
     done
   '';
 
+  # ── Gemini CLI ────────────────────────────────────
+  # Installed via pipx for reproducibility
+  home.activation.installGeminiCLI = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    if [ ! -x "$HOME/.local/bin/gemini-cli" ]; then
+      echo "[$0] Installing Gemini CLI via pipx..."
+      ${pkgs.pipx}/bin/pipx install gemini-cli
+      echo "[$0] Gemini CLI installed."
+    else
+      echo "[$0] Gemini CLI already installed."
+    fi
+  '';
+
   # ── Additional packages ─────────────────────────────
   home.packages = with pkgs; [
     bat
