@@ -20,7 +20,6 @@
         # Editors & Tools
         pkgs.neovim
         pkgs.tmux
-        pkgs.ghostty
 
         # Window Manager
         pkgs.yabai
