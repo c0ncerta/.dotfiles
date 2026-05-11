@@ -106,6 +106,7 @@
           "tailscale-app"
           "cloudflare-warp"
           # Utilities
+          "orbstack"
           "qbittorrent"
           "anydesk"
           "manus"
