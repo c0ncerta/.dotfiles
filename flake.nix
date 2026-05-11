@@ -48,7 +48,6 @@
         pkgs.pyenv
         pkgs.pipx
         pkgs.nodejs
-        pkgs.bun
 
         # Media Tools
         pkgs.yt-dlp
