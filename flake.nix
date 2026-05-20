@@ -87,7 +87,6 @@
         ];
         casks = [
           # Core apps (managed by nix-homebrew)
-          "iptvnator"
           "hammerspoon"
           "cmux"
           "legcord"
@@ -96,6 +95,7 @@
           "helium-browser"
           "visual-studio-code"
           "cursor"
+          "t3-code"
           # AI Assistants
           "chatgpt"
           "claude"
