@@ -116,6 +116,8 @@
           "WireGuard" = 1451685025;
         };
         onActivation.cleanup = "zap";
+        onActivation.autoUpdate = true;   # refresca taps antes de instalar/actualizar
+        onActivation.upgrade = true;      # actualiza brews/casks ya instalados en cada switch
       };
 
       # ── System Metadata ───────────────────────────────────────
