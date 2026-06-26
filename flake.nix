@@ -77,6 +77,14 @@
           "mas"
           "opencode"
           # Zsh plugins now managed by home-manager (programs.zsh.*)
+          # Python runtime (flake assumes python3 comes from Homebrew)
+          "python@3.12"
+          # RE / security tooling
+          "binwalk"
+          "coccinelle"
+          "jadx"
+          "radare2"
+          "semgrep"
         ];
         casks = [
           # Core apps (managed by nix-homebrew)
