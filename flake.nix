@@ -113,16 +113,20 @@
           "macwhisper"
           "shutter-encoder"
         ];
-        masApps = {
-          "GarageBand" = 682658836;
-          "HP Smart" = 1474276998;
-          "Keynote" = 409183694;
-          "Pages" = 409201541;
-          "uBlock Origin Lite" = 6745342698;
-          "Unzip - RAR ZIP 7Z Unarchiver" = 1537056818;
-          "WhatsApp" = 310633997;
-          "WireGuard" = 1451685025;
-        };
+        # masApps disabled: mas 7.0.0 is incompatible with `brew bundle`
+        # (it can't detect already-installed apps, so every switch fails on
+        # these). All 8 are already installed; the App Store handles updates.
+        # IDs kept for reference; re-enable if a compatible mas/brew lands.
+        # masApps = {
+        #   "GarageBand" = 682658836;
+        #   "HP Smart" = 1474276998;
+        #   "Keynote" = 409183694;
+        #   "Pages" = 409201541;
+        #   "uBlock Origin Lite" = 6745342698;
+        #   "Unzip - RAR ZIP 7Z Unarchiver" = 1537056818;
+        #   "WhatsApp" = 310633997;
+        #   "WireGuard" = 1451685025;
+        # };
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;   # refresca taps antes de instalar/actualizar
         onActivation.upgrade = true;      # actualiza brews/casks ya instalados en cada switch
