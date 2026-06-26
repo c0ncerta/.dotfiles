@@ -42,12 +42,10 @@
         pkgs.bun
 
         # Languages & Runtimes
-        pkgs.python312
+        # nodejs and python3 come from Homebrew (higher PATH priority)
         pkgs.php
         pkgs.phpPackages.composer
-        pkgs.pyenv
-        pkgs.pipx
-        pkgs.nodejs
+        pkgs.pnpm
 
         # Media Tools
         pkgs.yt-dlp
@@ -72,18 +70,13 @@
       # Things not in nixpkgs or macOS-specific:
       # - mas: Mac App Store CLI
       # - opencode: not in nixpkgs
-      # - zinit + zsh plugins: loaded via ~/.zshrc from Homebrew paths
       # - GUI casks: native macOS apps
       homebrew = {
         enable = true;
         brews = [
           "mas"
           "opencode"
-          "zinit"
-          # Zsh plugins — loaded via zinit from Homebrew paths in ~/.zshrc
-          "zsh-syntax-highlighting"
-          "zsh-autosuggestions"
-          "zsh-history-substring-search"
+          # Zsh plugins now managed by home-manager (programs.zsh.*)
         ];
         casks = [
           # Core apps (managed by nix-homebrew)
@@ -152,6 +145,7 @@
         home-manager.darwinModules.home-manager
         {
           home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backup";
           home-manager.users.mzzo = import ./home/home.nix;
         }
       ];

@@ -27,6 +27,16 @@
   # ── ZSH ─────────────────────────────────────────────
   programs.zsh = {
     enable = true;
+    syntaxHighlighting.enable = true;
+    autosuggestion = {
+      enable = true;
+      highlight = "fg=8";
+    };
+    historySubstringSearch = {
+      enable = true;
+      searchUpKey = [ "^[[A" ];
+      searchDownKey = [ "^[[B" ];
+    };
     history = {
       size = 50000;
       save = 50000;
@@ -49,34 +59,22 @@
       # Utilities
       grep = "grep --color=auto";
       # PAI-OpenCode
-      pai = "bun ~/git-repo/pai-opencode/PAI-Install/cli/quick-install.ts";
+      pai = "bun ~/code/ai-mcp/_vendor/pai-opencode/PAI-Install/cli/quick-install.ts";
     };
+    profileExtra = ''
+      # pipx
+      export PATH="$PATH:$HOME/.local/bin"
+      # OrbStack
+      source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+    '';
     initContent = ''
       # PATH deduplication (before anything else)
       typeset -U PATH
 
-      # ── Zinit Plugin Manager ────────────────────────────
-      if [[ -f /opt/homebrew/opt/zinit/zinit.zsh ]]; then
-        source /opt/homebrew/opt/zinit/zinit.zsh
-
-        # Syntax highlighting (load first for correct highlighting)
-        zinit light zsh-users/zsh-syntax-highlighting
-
-        # Autosuggestions
-        zinit light zsh-users/zsh-autosuggestions
-        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
-        ZSH_AUTOSUGGEST_USE_ASYNC=true
-
-        # History substring search
-        zinit light zsh-users/zsh-history-substring-search
-        bindkey '^[[A' history-substring-search-up
-        bindkey '^[[B' history-substring-search-down
-        [[ -n "''${key[UP]}" ]]   && bindkey "''${key[UP]}"   history-substring-search-up
-        [[ -n "''${key[DOWN]}" ]] && bindkey "''${key[DOWN]}" history-substring-search-down
-        ZSH_HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=black,bold'
-        ZSH_HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=red,fg=white,bold'
-        ZSH_HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS='i'
-      fi
+      # History substring search styling
+      ZSH_HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=black,bold'
+      ZSH_HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=red,fg=white,bold'
+      ZSH_HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS='i'
     '';
     setOptions = [
       "AUTO_CD"
