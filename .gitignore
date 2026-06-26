@@ -21,3 +21,7 @@ result/
 # Por ejemplo, si tienes claves SSH o tokens API aquí
 # .ssh/
 # .config/my-app/api_keys.txt
+
+# nix-darwin build symlink
+result
+result-*
